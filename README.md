@@ -4,7 +4,7 @@ Collection of script to build lab environment
 
 ## Docker install script
 
-A summary of install steps from https://docs.docker.com/engine/install/ubuntu/
+This install script is a summary of installation steps from https://docs.docker.com/engine/install/ubuntu/
 
 You might need to change user name `ubuntu` in the last line, to a user name used in your setup.
 
@@ -32,7 +32,17 @@ If your environment is behind a proxy, you might need to setup proxy environment
 
 ## K3s install script
 
+This script installs K3s & remove shipped traefik ingress controller
+
+You might need to update the `server` name to reflect your hostname
+
+```
+    if [ "$(kubectl get nodes server -o=jsonpath='{.status.conditions[3].status}')" == "True" ]; then
+```
+
 ## Local Docker registry install script
+
+Setup & run Docker local registry as K3s pod
 
 ## NGINX ingress controller install script
 
