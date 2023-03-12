@@ -17,7 +17,7 @@ sudo su ubuntu
 
 If your environment is behind a proxy, you might need to setup proxy environment variable
 
-1. Edit file `/lib/systemd/system/docker.service` file 
+1. Edit `/lib/systemd/system/docker.service` file 
 2. Add following example under `[Service]` section, adjust the URL with your proxy URL
 
   ```
