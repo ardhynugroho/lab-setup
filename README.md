@@ -48,10 +48,10 @@ Setup & run Docker local registry as K3s pod
 
 ## Netplan configuration
 
-Used to configure IP address to be used as ExternalIP for kubernetes services.
-
-Example:
+Example configuration to configure IP addresses to be used as ExternalIP for kubernetes services:
 - 99-dns.yaml -- DNS service ExternalIP
 - 99-http.yaml -- Web-app ExternalIP
 
-Copy the files to `/etc/netplan` then do `netplan apply`.
+1. Update the content or create your own YAML file that fit your need
+2. Copy the files to `/etc/netplan` 
+3. Do `netplan apply`
