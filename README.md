@@ -18,14 +18,15 @@ sudo su ubuntu
 If your environment is behind a proxy, you might need to setup proxy environment variable
 
 1. Edit file `/lib/systemd/system/docker.service` file 
-2. Add following under `[Service]` section
+2. Add following example under `[Service]` section, adjust the URL with your proxy URL
 
   ```
   [Service]
-  Environment="HTTP_PROXY=http://proxy.example.com:80"
-  Environment="HTTPS_PROXY=https://proxy.example.com:443"
-  Environment="NO_PROXY=localhost,127.0.0.1,docker-registry.example.com,.corp"
+  Environment="HTTP_PROXY=http://192.168.1.1:5678"
+  Environment="HTTPS_PROXY=https://192.168.1.1:5678"
+  Environment="NO_PROXY=localhost,127.0.0.1,local-registry,.corp"
   ```
+  
 3. Do `systemctl daemon-reload`
 4. Restart docker service `systemctl restart docker`
 
