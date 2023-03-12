@@ -1,0 +1,7 @@
+# /etc/netplan/99-dns.yaml
+network:
+    version: 2
+    ethernets:
+        ens7:
+            addresses:
+                - 10.1.20.53/24
