@@ -15,16 +15,19 @@ sudo su ubuntu
 
 ### Proxy setting
 
-If your environment is behind a proxy, set the proxy environment variable in `/lib/systemd/system/docker.service` file under `[Service]` section
+If your environment is behind a proxy, you might need to setup proxy environment variable
 
-```
-[Service]
-Environment="HTTP_PROXY=http://proxy.example.com:80"
-Environment="HTTPS_PROXY=https://proxy.example.com:443"
-Environment="NO_PROXY=localhost,127.0.0.1,docker-registry.example.com,.corp"
-```
+1. Edit file `/lib/systemd/system/docker.service` file 
+2. Add following under `[Service]` section
 
-Do `systemctl daemon-reload` and restart docker service `systemctl restart docker`
+  ```
+  [Service]
+  Environment="HTTP_PROXY=http://proxy.example.com:80"
+  Environment="HTTPS_PROXY=https://proxy.example.com:443"
+  Environment="NO_PROXY=localhost,127.0.0.1,docker-registry.example.com,.corp"
+  ```
+3. Do `systemctl daemon-reload`
+4. Restart docker service `systemctl restart docker`
 
 ## K3s install script
 
